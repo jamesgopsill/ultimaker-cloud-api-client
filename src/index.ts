@@ -1,6 +1,7 @@
 import { authorizeUrl } from "./auth/authorize-url.js"
-import { augmentedFetch } from "./core/augmented-fetch.js"
 import { requestAccessToken } from "./auth/request-access-token.js"
+import { augmentedFetch } from "./core/augmented-fetch.js"
+import type { Scopes } from "./enum.js"
 
 export * from "./definitions.js"
 
@@ -8,15 +9,16 @@ export interface ClientConfig {
 	clientId: string
 	clientSecret: string
 	redirectUri: string
-	scope: string[]
+	scope: Scopes[]
 }
 
-export class Client {
-	protected accountUrl = "https://account.ultimaker.com/"
+export class UltimakerClient {
+	protected _accountUrl = "https://account.ultimaker.com"
+	protected _apiUrl = "https://api.ultimaker.com"
 	protected clientId: string
 	protected clientSecret: string
 	protected redirectUri: string
-	protected scope: string[]
+	protected scope: Scopes[]
 	protected bearerToken: string = ""
 	protected refreshToken: string = ""
 	protected expires: Date | null = null
@@ -28,7 +30,7 @@ export class Client {
 		this.scope = config.scope
 	}
 
-	protected fetch = augmentedFetch
+	protected _fetch = augmentedFetch
 
 	public ping = () => "pong"
 	public authorizeUrl = authorizeUrl

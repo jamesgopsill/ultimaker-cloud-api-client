@@ -3,10 +3,10 @@ import type { Client } from "../index.js"
 
 export async function augmentedFetch<T>(
 	this: Client,
-	method: "GET" | "POST" | "PUT",
+	method: "GET" | "POST" | "PUT" | "DELETE",
 	url: string,
-	urlArgs: {},
-	bodyArgs: {}
+	urlArgs: { [k: string]: any } = {},
+	bodyArgs: { [k: string]: any } = {}
 ) {
 	if (Object.keys(urlArgs).length > 0) {
 		url += "?"

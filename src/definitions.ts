@@ -1,11 +1,15 @@
 export type HttpResponse<T> =
 	| ({
 			ok: true
-			data: T
+			data: {
+				data: T
+			}
 	  } & Response)
 	| ({
 			ok: false
-			data: null
+			data: {
+				errors: any[]
+			}
 	  } & Response)
 
 export interface TokenResponse {
@@ -13,4 +17,11 @@ export interface TokenResponse {
 	access_token: string
 	refresh_token: string
 	expires_in: number
+}
+
+export interface connectStatus {
+	ok: boolean
+	time: string
+	uptime: number
+	version: string
 }
