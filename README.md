@@ -6,7 +6,7 @@ The client is being developed as part of a research programme investigating agen
 
 ## Client Docs
 
-The client documentation have been produced using [TypeDoc](https://typedoc.org/) and can be accessed [here](https://jamesgopsill.github.io/ultimaker-cloud-api-client/). More details on the API can be found at [Repetier Server API](https://www.repetier-server.com/manuals/programming/API/index.html).
+The client documentation have been produced using [TypeDoc](https://typedoc.org/) and can be accessed [here](https://jamesgopsill.github.io/ultimaker-cloud-api-client/). More details on the API can be found at [Ultimaker Cloud API](https://docs.api.ultimaker.com/).
 
 ## Contributing
 

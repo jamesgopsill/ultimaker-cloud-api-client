@@ -2,16 +2,24 @@
 	"$schema": "https://json.schemastore.org/package.json",
 	"name": "@jamesgopsill/ultimaker-cloud-api-client",
 	"version": "0.0.1",
-	"description": "",
-	"keywords": [],
+	"description": "A Typescript client for the Ultimaker Cloud API.",
+	"keywords": [
+		"Ultimaker",
+		"Ultimaker Cloud API",
+		"3D Printing"
+	],
 	"author": "James Gopsill",
 	"license": "MIT",
 	"private": false,
 	"repository": {
-		"type": "",
-		"url": ""
+		"type": "github",
+		"url": "https://github.com/jamesgopsill/ultimaker-cloud-api-client"
 	},
-	"homepage": "",
+	"homepage": "https://jamesgopsill.github.io/ultimaker-cloud-api-client",
+	"funding": {
+		"type": "individual",
+		"url": "https://github.com/sponsors/jamesgopsill"
+	},
 	"engines": {
 		"node": ">=19.0.0"
 	},
@@ -29,7 +37,7 @@
 	],
 	"scripts": {
 		"test": "jest",
-		"build:dist": "rm -rf dist && tsc --project tsconfig.json && tsc --project tsconfig.cjs.json && node create-dist-package-jsons.mjs",
+		"build:dist": "rm -rf dist && tsc --project tsconfig.json && tsc --project tsconfig.cjs.json && node create-package-jsons.mjs",
 		"build:docs": "typedoc",
 		"format": "prettier --write ."
 	},
